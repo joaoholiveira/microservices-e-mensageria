@@ -1,4 +1,4 @@
-package io.github.cursospring.cartoesms.application.representation;
+package io.github.cursospring.cartoesms.application.representation.request;
 
 import io.github.cursospring.cartoesms.domain.Cartao;
 import io.github.cursospring.cartoesms.domain.enums.BandeiraCartao;
