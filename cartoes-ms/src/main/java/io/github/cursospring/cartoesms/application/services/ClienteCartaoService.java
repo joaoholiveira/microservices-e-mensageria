@@ -1,6 +1,5 @@
 package io.github.cursospring.cartoesms.application.services;
 
-import io.github.cursospring.cartoesms.domain.Cartao;
 import io.github.cursospring.cartoesms.domain.ClienteCartao;
 import io.github.cursospring.cartoesms.infrastructure.repository.ClienteCartaoRepository;
 import lombok.RequiredArgsConstructor;
