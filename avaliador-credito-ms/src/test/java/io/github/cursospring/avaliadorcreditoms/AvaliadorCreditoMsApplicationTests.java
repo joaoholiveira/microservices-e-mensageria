@@ -1,0 +1,13 @@
+package io.github.cursospring.avaliadorcreditoms;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class AvaliadorCreditoMsApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
