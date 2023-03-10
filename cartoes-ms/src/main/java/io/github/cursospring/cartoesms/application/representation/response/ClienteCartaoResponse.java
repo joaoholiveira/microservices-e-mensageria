@@ -19,7 +19,7 @@ public class ClienteCartaoResponse {
     public static ClienteCartaoResponse fromModel(ClienteCartao model){
         return new ClienteCartaoResponse(
                 model.getCartao().getNome(),
-                model.getCartao().getBandeiraCartao().toString(),
+                model.getCartao().getBandeira().toString(),
                 model.getLimite()
         );
     }

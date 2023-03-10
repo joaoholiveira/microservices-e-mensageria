@@ -1,5 +1,6 @@
 package io.github.cursospring.avaliadorcreditoms.infrastructure.clients;
 
+import io.github.cursospring.avaliadorcreditoms.domain.model.Cartao;
 import io.github.cursospring.avaliadorcreditoms.domain.model.CartaoCliente;
 import io.github.cursospring.avaliadorcreditoms.domain.model.DadosCliente;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -14,5 +15,8 @@ public interface CartoesResourceClient {
 
     @GetMapping(params = "cpf")
     ResponseEntity<List<CartaoCliente>> getCartoesByCpf(@RequestParam("cpf") String cpf);
+
+    @GetMapping(params = "renda")
+    ResponseEntity<List<Cartao>> getCartoesRendaAte(@RequestParam("renda") Long renda);
 
 }
