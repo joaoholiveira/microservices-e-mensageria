@@ -3,9 +3,7 @@ package io.github.cursospring.avaliadorcreditoms.application;
 import io.github.cursospring.avaliadorcreditoms.application.services.AvaliadorCreditoService;
 import io.github.cursospring.avaliadorcreditoms.application.services.exceptions.DadosClienteNotFoundException;
 import io.github.cursospring.avaliadorcreditoms.application.services.exceptions.ErroComunicacaoMicroservicesException;
-import io.github.cursospring.avaliadorcreditoms.domain.model.DadosAvaliacao;
-import io.github.cursospring.avaliadorcreditoms.domain.model.RetornoAvaliacaoCliente;
-import io.github.cursospring.avaliadorcreditoms.domain.model.SituacaoCliente;
+import io.github.cursospring.avaliadorcreditoms.domain.model.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,6 +42,16 @@ public class AvaliadorCreditoController {
             return ResponseEntity.notFound().build();
         } catch (ErroComunicacaoMicroservicesException e) {
             return ResponseEntity.status(HttpStatus.resolve(e.getStatus())).build();
+        }
+    }
+
+    @PostMapping("solicitar")
+    public ResponseEntity solicitarCartao(@RequestBody DadosSolicitacaoEmissaoCartao dados){
+        try{
+            ProtocoloSolicitacaoCartao protocolo = avaliadorCreditoService.solicitarEmissaoCartao(dados);
+            return ResponseEntity.ok(protocolo);
+        }catch(Exception e){
+            return ResponseEntity.internalServerError().body(e.getMessage());
         }
     }
 
