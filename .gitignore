@@ -1,2 +1,4 @@
 clientes-ms/logs/log-file.log
 eureka-server/logs/log-file.log
+avaliador-credito-ms/logs/log-file.log
+cartoes-ms/logs/log-file.log
